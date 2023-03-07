@@ -1,5 +1,7 @@
 # QuizzApp
 
+This is simple Quiz App with features like randomly selecting quiz based on Spinning wheel result, awarding title to user based on performance in quizzes.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
 ## Development server
