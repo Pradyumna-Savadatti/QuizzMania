@@ -1,0 +1,50 @@
+<div class="main">
+  <div class="subMain">
+    <h1>Login<mat-icon id="lock">lock_open</mat-icon></h1>
+    <div class="inContainer" [formGroup]="loginForm">
+      <input
+        type="email"
+        class="intxt"
+        [(ngModel)]="email"
+        class="inp"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <mat-error *ngIf="loginForm.get('email')?.invalid"
+        >Invalid Email</mat-error
+      >
+
+      <input
+        matInput
+        class="inp"
+        placeholder="Password"
+        [(ngModel)]="password"
+        style="margin-top: 2vh"
+        formControlName="password"
+      />
+      <button
+        mat-fab
+        extended
+        color="primary"
+        style="margin-top: 3vh"
+        (click)="validate()"
+      >
+        <mat-icon>fingerprint</mat-icon>
+        Login
+      </button>
+      <p id="cont" (click)="gotoSignUp()" style="margin-top: 3vh">
+        <mat-icon id="pets">pets</mat-icon> New user?
+      </p>
+    </div>
+  </div>
+  <div *ngIf="showErr" class="errCont">
+    <div class="errBox">
+      <div class="errTxt">
+        <p>{{ err }}</p>
+      </div>
+      <div class="errClose" (click)="closeErr()">
+        <mat-icon>highlight_off</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

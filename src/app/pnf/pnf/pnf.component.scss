@@ -1,0 +1,30 @@
+@import "../../app.component.scss";
+.main {
+  @include mainMixin;
+  @include centerMixin;
+}
+.subMain {
+  width: 60%;
+  height: 60%;
+  background-color: rgba(85, 0, 85, 0.5);
+  @include centerMixin;
+  justify-content: space-evenly;
+}
+.fMain,
+.tMain {
+  width: 45%;
+  height: 90%;
+  @include centerMixin;
+}
+.fMain mat-icon {
+  width: 70%;
+  height: 70%;
+  font-size: 15vmax;
+  @include centerMixin;
+}
+.sMain {
+  width: 0.2%;
+  height: 60%;
+  border-radius: 10vmax;
+  background-color: rgba(255, 255, 255, 0.5);
+}

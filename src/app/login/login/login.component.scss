@@ -1,0 +1,86 @@
+@import "../../app.component.scss";
+
+.main {
+  @include centerMixin;
+  @include mainMixin;
+}
+.subMain {
+  width: 50%;
+  height: 90%;
+  @include centerMixin;
+  flex-direction: column;
+}
+.inContainer {
+  width: 70%;
+  height: 50%;
+  @include centerMixin;
+  flex-direction: column;
+  overflow: visible;
+}
+.in {
+  width: 70%;
+}
+
+.intxt {
+  color: white;
+}
+#lock {
+  font-size: large;
+}
+#cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#pets {
+  font-size: larger;
+}
+.errCont {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 2s;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  @include centerMixin;
+}
+.errBox {
+  width: 50%;
+  height: 50%;
+  @include centerMixin;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgba(85, 0, 85, 0.5);
+  border-radius: 3vmax;
+  overflow: hidden;
+}
+.errTxt {
+  width: 100%;
+  height: 70%;
+  @include centerMixin;
+}
+.errClose {
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(255, 0, 0, 0);
+  @include centerMixin;
+}
+.inp {
+  width: 70%;
+  height: 7vh;
+  outline: 0 solid black;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3vmax;
+  &:focus {
+    border-color: purple;
+  }
+}

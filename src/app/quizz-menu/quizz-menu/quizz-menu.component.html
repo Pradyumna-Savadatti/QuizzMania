@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="subMain" #subMain>
+    <div class="loop" *ngFor="let angle of arr1; index as i">
+      <div
+        class="part"
+        [style]="'left:' + arr1[i] + 'vmax' + ';' + 'top:' + arr2[i] + 'vmax;'"
+      >
+        <span [style]="'transform:rotate(' + arr3[i] + 'deg)'"
+          >Quizz : {{ i + 1 }}</span
+        >
+      </div>
+      <!-- <div class="temp" (click)="gotoQuizz(2)">Take Quizz</div> -->
+    </div>
+  </div>
+  <div *ngIf="spinFlag" class="complete">
+    <h1>You have already attended all the quizzes!</h1>
+    <div class="completeSub">
+      <button (click)="goBack()">Back</button>
+      <button (click)="gotoProfile()">Profile</button>
+    </div>
+  </div>
+  <div class="pointer" #pointer></div>
+  <div class="btn" (click)="spin()">Spin</div>
+  <div class="conf" *ngIf="flag">
+    <h4>Quizz-{{ angle + 1 }} Loading...</h4>
+    <mat-progress-bar mode="determinate" [value]="time * 25"></mat-progress-bar>
+  </div>
+</div>

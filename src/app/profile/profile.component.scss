@@ -1,0 +1,87 @@
+@import "../app.component.scss";
+.main {
+  @include centerMixin;
+  @include mainMixin;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.subMain {
+  @include centerMixin;
+  width: 60%;
+  height: 150vh;
+  background-color: rgba(85, 0, 85, 0.3);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.name {
+  width: 40%;
+  height: 7%;
+  background-color: rgba(85, 0, 85, 0.8);
+  @include centerMixin;
+  border-top-left-radius: 1vmax;
+  border-bottom-left-radius: 1vmax;
+  overflow: hidden;
+}
+.cont {
+  width: 20%;
+  height: 100%;
+  background-color: rgba(100, 0, 100, 1);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  @include centerMixin;
+}
+.cont mat-icon {
+  width: 100%;
+  height: 100%;
+  @include centerMixin;
+  font-size: 2.3vmax;
+}
+.contTxt {
+  width: 80%;
+  height: 100%;
+  @include centerMixin;
+}
+.bar {
+  width: 90%;
+  height: 20%;
+  @include centerMixin;
+}
+.btn {
+  width: 20%;
+  height: 10vh;
+  color: white;
+  background-color: rgba(85, 0, 85, 0.5);
+  @include centerMixin;
+  cursor: pointer;
+  margin-top: 2vmax;
+  margin-bottom: 2vmax;
+}
+.summaryMain {
+  width: 70%;
+  height: 50vh;
+  background-color: rgba(85, 0, 85, 0.8);
+  @include centerMixin;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.summarySubMain {
+  width: 30%;
+  height: 20vh;
+  @include centerMixin;
+}
+.contSumm {
+  width: 70%;
+  height: 80%;
+  @include centerMixin;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.quizNum {
+  font-size: 1.3vmax;
+}
+.line {
+  width: 80%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 1.5vmax;
+}

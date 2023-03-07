@@ -1,0 +1,46 @@
+<div class="main">
+  <div class="nav">
+    <div class="nav-sub1"><mat-icon>schedule</mat-icon></div>
+    <div class="nav-sub2">{{ timeMin }}</div>
+    <div class="nav-sub3">{{ timeSec }}</div>
+  </div>
+  <div class="nav2">
+    <div class="nav-sub1"><mat-icon>done_all</mat-icon></div>
+    <div class="nav-sub2">{{ quetionsAttended }}</div>
+    <div class="nav-sub3">10</div>
+  </div>
+  <div class="cont">
+    <div class="cont2" *ngFor="let quetion of data; index as i">
+      <div class="queCont">
+        <div class="part1">{{ i + 1 }}. {{ quetion.quetion }}</div>
+        <div class="part2">
+          <div class="subPart2" *ngFor="let opt of quetion.options; index as j">
+            <input
+              type="radio"
+              [name]="i"
+              class="radio"
+              (click)="answered(i, j)"
+            />
+            <span>{{ opt }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="submit" (click)="submitSol()">Submit Answers</div>
+  </div>
+  <div *ngIf="over" class="over">
+    <div class="overSub">
+      <div class="left"><mat-icon> bubble_chart</mat-icon></div>
+      <div class="center"></div>
+      <div class="right">
+        <h2 *ngIf="(ansCount / 10) * 100 >= 30">Congratulations!</h2>
+        <h2 *ngIf="(ansCount / 10) * 100 < 30">Hard luck :(</h2>
+        <h2>Your score : {{ (ansCount / 10) * 100 }}%</h2>
+        <button mat-fab extended color="primary" (click)="go()">
+          <mat-icon>fingerprint</mat-icon>
+          Next {{ timeCount }}s
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

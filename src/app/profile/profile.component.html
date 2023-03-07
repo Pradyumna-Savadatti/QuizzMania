@@ -1,0 +1,78 @@
+<div class="main">
+  <div class="subMain">
+    <div class="name">
+      <div class="cont"><mat-icon>account_circle</mat-icon></div>
+      <div class="contTxt">
+        {{ service.userData.name }}
+      </div>
+    </div>
+
+    <div class="name">
+      <div class="cont"><mat-icon>public</mat-icon></div>
+      <div class="contTxt">
+        {{ service.userData.email }}
+      </div>
+    </div>
+    <div class="name">
+      <div class="cont"><mat-icon>golf_course</mat-icon></div>
+      <div class="contTxt">
+        {{ service.userData.title }}
+      </div>
+    </div>
+    <div class="name" style="width: 70%">
+      <div class="cont" style="width: 25%">High score</div>
+      <div class="contTxt">
+        <div class="bar">
+          <mat-progress-bar
+            mode="determinate"
+            [value]="highScore"
+          ></mat-progress-bar
+          >&nbsp;{{ highScore | number : "2.1-2" }}%
+        </div>
+      </div>
+    </div>
+    <div class="name" style="width: 70%">
+      <div class="cont" style="width: 35%">Average score</div>
+      <div class="contTxt">
+        <div class="bar">
+          <mat-progress-bar
+            mode="determinate"
+            [value]="score"
+          ></mat-progress-bar
+          >&nbsp;{{ score | number : "2.1-2" }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="name" style="width: 70%">
+      <div class="cont" style="width: 40%">Quizzes attended</div>
+      <div class="contTxt" style="width: 60%">
+        <div class="bar">
+          <mat-progress-bar
+            mode="determinate"
+            [value]="(quizzAttended / 5) * 100"
+          ></mat-progress-bar
+          >&nbsp;{{ quizzAttended }}
+        </div>
+      </div>
+    </div>
+    <div class="summaryMain">
+      <div
+        class="summarySubMain"
+        *ngFor="let exam of service.userData.quizScore; index as i"
+      >
+        <div class="contSumm">
+          <div class="quizNum">Quizz : {{ i + 1 }}</div>
+          <div class="line"></div>
+          <div class="result" *ngIf="service.userData.quizAttended[i] == true">
+            {{ exam }}%
+          </div>
+          <div class="result" *ngIf="service.userData.quizAttended[i] != true">
+            Not Taken
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn" (click)="goBack()">Back</div>
+</div>

@@ -1,0 +1,75 @@
+<div class="main">
+  <div class="subMain">
+    <h1>SignUp<mat-icon id="lock">lock</mat-icon></h1>
+    <div class="inContainer" [formGroup]="signupBuilder">
+      <input
+        class="inp"
+        matInput
+        formControlName="name"
+        placeholder="Full Name"
+        [(ngModel)]="name"
+      />
+      <!-- <mat-error *ngIf="signupBuilder.get('name')?.invalid"
+        >Invalid Name</mat-error
+      > -->
+
+      <input
+        class="inp"
+        matInput
+        formControlName="email"
+        [(ngModel)]="email"
+        placeholder="Email"
+      />
+
+      <!-- <mat-error *ngIf="signupBuilder.get('email')?.invalid"
+        >Invalid Email</mat-error
+      > -->
+
+      <input
+        class="inp"
+        matInput
+        placeholder="Password"
+        formControlName="password"
+        [(ngModel)]="pass"
+      />
+      <mat-hint class="hint" *ngIf="signupBuilder.get('password')?.invalid"
+        >Should be between 6-15 characters</mat-hint
+      >
+
+      <input
+        class="inp"
+        matInput
+        placeholder="Confirm Password"
+        formControlName="cpassword"
+        [(ngModel)]="cpass"
+        (change)="equal()"
+      />
+      <!-- <mat-error *ngIf="!flag">Password does't match</mat-error> -->
+      <button
+        mat-fab
+        extended
+        color="primary"
+        style="margin-top: 2vh"
+        type="submit"
+        (click)="valid()"
+      >
+        <mat-icon>fingerprint</mat-icon>
+        Sign Up
+      </button>
+      <p id="cont" (click)="gotoLogin()">
+        <mat-icon id="verified">verified_user</mat-icon> Already have an
+        account?
+      </p>
+    </div>
+  </div>
+  <div *ngIf="showErr" class="errCont">
+    <div class="errBox">
+      <div class="errTxt">
+        <p>{{ err }}</p>
+      </div>
+      <div class="errClose" (click)="closeErr()">
+        <mat-icon>highlight_off</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
